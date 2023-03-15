@@ -3,10 +3,10 @@ import './SearchBar.css';
 
 const SearchBar = () => {
   return (
-    <>
-        <div className="searchContainer">
-            <input type='text' placeholder='Filter podcast...'/>
-        </div>    
+    <> 
+      <div className="searchContainer">
+        <input type='text' placeholder='Filter podcast...'/>
+      </div>
     </>
   )
 }

@@ -9,12 +9,9 @@ function usefetch () {
     () => axios.get('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json')
   )
 
-  const response = data?.data;
-  const { feed } = response
-
   return {
     isLoading,
-    feed,
+    data,
   }
 }
 

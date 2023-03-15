@@ -1,8 +1,15 @@
 import React from 'react'
+import './Card.css'
 
-const Card = () => {
+const Card = ({name, image, artist}) => {
   return (
-    <div>Card</div>
+    <div>
+      <img src={image} className="podcastImage" alt="" />
+      <div className='cardBox'>
+        <h5>{name}</h5>
+        <p>Author: {artist}</p>
+      </div>
+    </div>
   )
 }
 

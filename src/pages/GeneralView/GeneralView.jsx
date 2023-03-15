@@ -5,13 +5,14 @@ import PodcastGrid from '../../components/PodcastGrid/PodcastGrid'
 import usefetch from '../../hooks/use-fetch'
 
 const GeneralView = () => {
-    const { feed } = usefetch()
-    console.log(feed)
+  const { data, isLoading } = usefetch()
+  const feed = data?.data?.feed
+
   return (
     <>
-        <Header/>
+        <Header isLoading={isLoading}/>
         <SearchBar/>
-        <PodcastGrid/>
+        <PodcastGrid feed={feed}/>
     </>
   )
 }
