@@ -1,8 +1,12 @@
 import React from 'react'
+import Card from '../Card/Card'
 
 const PodcastGrid = () => {
   return (
-    <div>PodcastGrid</div>
+    <>
+        <div>PodcastGrid</div>
+        <Card/>
+    </>
   )
 }
 
