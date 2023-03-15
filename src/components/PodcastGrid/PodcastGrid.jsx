@@ -19,8 +19,9 @@ const  PodcastGrid = ({feed, searchTerm}) => {
               const name = item['im:name'].label;
               const image = item['im:image'][2].label;
               const artist = item['im:artist'].label;
+              const id = item.id.attributes['im:id'];
               console.log(name)
-              return <Card name={name} image={image} artist={artist}/>
+              return <Card name={name} image={image} artist={artist} id={id}/>
           })}
       </div>
   )

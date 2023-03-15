@@ -1,15 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './Card.css'
 
-const Card = ({name, image, artist}) => {
+const Card = ({name, image, artist, id}) => {
   return (
-    <div>
+    <Link to={`/podcast/${id}`} >
       <img src={image} className="podcastImage" alt="" />
       <div className='cardBox'>
         <h5>{name}</h5>
         <p>Author: {artist}</p>
       </div>
-    </div>
+      </Link>
   )
 }
 
