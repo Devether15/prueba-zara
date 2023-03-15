@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Card from '../Card/Card';
 import './PodcastGrid.css'
 
@@ -10,6 +10,8 @@ const  PodcastGrid = ({feed, searchTerm}) => {
             if(searchTerm === ""){
               return val;
             }else if (val['im:name'].label.toLowerCase().includes(searchTerm.toLowerCase())) {
+              return val;
+            }else if (val['im:artist'].label.toLowerCase().includes(searchTerm.toLowerCase())) {
               return val;
             }
           }).map(item => {
