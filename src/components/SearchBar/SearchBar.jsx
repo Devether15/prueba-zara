@@ -1,11 +1,17 @@
 import React from 'react';
 import './SearchBar.css';
 
-const SearchBar = () => {
+const SearchBar = ({setSearchterm}) => {
   return (
     <> 
       <div className="searchContainer">
-        <input type='text' placeholder='Filter podcast...'/>
+        <input 
+          type='text' 
+          placeholder='Filter podcast...'
+          onChange={(event) => {
+            setSearchterm(event.target.value)
+          }} 
+        />
       </div>
     </>
   )
