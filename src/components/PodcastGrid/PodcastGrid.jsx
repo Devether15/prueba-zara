@@ -3,7 +3,6 @@ import Card from '../Card/Card';
 import './PodcastGrid.css'
 
 const  PodcastGrid = ({feed, searchTerm}) => {
-
   return(
       <div className="podcastContainer">
           {feed && feed.entry.filter((val) => {
@@ -15,13 +14,13 @@ const  PodcastGrid = ({feed, searchTerm}) => {
               return val;
             }
           }).map(item => {
-            console.log(item)
               const name = item['im:name'].label;
               const image = item['im:image'][2].label;
               const artist = item['im:artist'].label;
               const id = item.id.attributes['im:id'];
-              console.log(name)
-              return <Card name={name} image={image} artist={artist} id={id}/>
+              // const description = item.summary.label;
+              // localStorage.setItem('desc', description);
+              return <Card name={name} image={image} artist={artist} id={id} key={id}/>
           })}
       </div>
   )

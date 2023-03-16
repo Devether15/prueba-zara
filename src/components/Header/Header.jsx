@@ -7,7 +7,9 @@ const Header = ({isLoading}) => {
   return (
     <>
         <div className='container'>
-            <h1 className='title'>Podcaster</h1>
+            <h1 className='title'>
+              Podcaster
+            </h1>
             {isLoading ? ( 
               <div className='spinnerContainer'>
                   <BounceLoader color="rgb(34, 133, 190)" size={30}/>

@@ -2,7 +2,7 @@ import GeneralView from './pages/GeneralView/GeneralView'
 import PodcastDetail from './pages/PodcastDetail/PodcastDetail'
 import EpisodeDetail from './pages/EpisodeDetail/EpisodeDetail'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom' 
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 const queryClient = new QueryClient()
 
