@@ -4,7 +4,6 @@ import './PodcastListTable.css'
 import { useNavigate  } from "react-router-dom";
 
 const PodcastListTable = ({ results }) => {
-  // console.log(results)
   const navigate = useNavigate ();
   const handleRowClick = (collectionId, trackId) => {
     navigate(`/podcast/${collectionId}/episode/${trackId}`); 
@@ -54,11 +53,10 @@ const PodcastListTable = ({ results }) => {
               prepareRow(row);
               const collectionId = row.original.collectionId;
               const trackId = row.original.trackId;
-
               return (
                 <tr style ={ index % 2? { background : "#e3e3e3" }:{ background : "white" }} {...row.getRowProps()}>
                   {row.cells.map((cell) => (                                       
-                      <td onClick={()=> handleRowClick(collectionId, trackId)} className='PodcastListTable-td' {...cell.getCellProps()}> {cell.render("Cell")}</td>               
+                      <td onClick={()=> handleRowClick(collectionId, trackId)} className={cell.column.Header === 'Tittle' ? 'PodcastListTable-td PodcastListTable-tittle' : 'PodcastListTable-td' } {...cell.getCellProps()}> {cell.render("Cell")}</td>               
                   ))}
                 </tr>
               );
