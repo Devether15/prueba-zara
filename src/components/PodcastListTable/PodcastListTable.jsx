@@ -1,15 +1,17 @@
-import React, { useState,useEffect, useMemo } from 'react'
-import { useParams } from 'react-router-dom';
-import useFetchDetail from '../../hooks/use-fetch-detail'
+import React, { useMemo } from 'react'
 import { useTable } from "react-table";
+import './PodcastListTable.css'
+import { useNavigate  } from "react-router-dom";
 
-const PodcastListTable = () => {
-  const { id } = useParams();
-  const {data, isLoading, isFetching } = useFetchDetail(id)
-
+const PodcastListTable = ({ results }) => {
+  // console.log(results)
+  const navigate = useNavigate ();
+  const handleRowClick = (collectionId, trackId) => {
+    navigate(`/podcast/${collectionId}/episode/${trackId}`); 
+  }
   const tableData =  useMemo(()=>{
-    return data?.data?.results || []
-  },[data])
+    return results || []
+  },[results])
 
   const columns = useMemo(
     () => [
@@ -33,7 +35,7 @@ const PodcastListTable = () => {
     useTable({ columns, data: tableData });
 
   return (
-    <div className="App">
+    <div className="PodcastListTableContainer">
       <div className="container">
         <table {...getTableProps()}>
           <thead>
@@ -48,12 +50,15 @@ const PodcastListTable = () => {
             ))}
           </thead>
           <tbody {...getTableBodyProps()}>
-            {rows.map((row) => {
+            {rows.map((row, index) => {
               prepareRow(row);
+              const collectionId = row.original.collectionId;
+              const trackId = row.original.trackId;
+
               return (
-                <tr {...row.getRowProps()}>
-                  {row.cells.map((cell) => (
-                    <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
+                <tr style ={ index % 2? { background : "#e3e3e3" }:{ background : "white" }} {...row.getRowProps()}>
+                  {row.cells.map((cell) => (                                       
+                      <td onClick={()=> handleRowClick(collectionId, trackId)} className='PodcastListTable-td' {...cell.getCellProps()}> {cell.render("Cell")}</td>               
                   ))}
                 </tr>
               );

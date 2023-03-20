@@ -1,0 +1,13 @@
+.PodcastListTableContainer {
+    display: flex;
+    box-shadow: 0 0 5px grey;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+.PodcastListTable-td{
+    border-top: 2px solid rgb(189, 189, 189);
+    height: 1px;
+    padding: 0;
+}

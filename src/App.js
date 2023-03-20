@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<GeneralView/>} />
           <Route exact path='/podcast/:id' element={<PodcastDetail/>} />
-          <Route path='/podcast/:id/episode/:id' element={<EpisodeDetail/>} />
+          <Route path='/podcast/:id/episode/:trackID' element={<EpisodeDetail/>} />
         </Routes>
         </div>
       </Router> 

@@ -22,7 +22,7 @@ const PodcastDetail = () => {
   const trackName =  rawData?.data?.results[0]?.trackName;
   const artistName =  rawData?.data?.results[0]?.artistName;
   const artworkUrl600 =  rawData?.data?.results[0]?.artworkUrl600;
-  const trackId =  rawData?.data?.results[0]?.trackId;
+  const results = rawData?.data?.results;
 
  
   return (
@@ -30,12 +30,16 @@ const PodcastDetail = () => {
       <Header isLoading={isLoading}/>
       <div className='podcastDetailContainer'>
         <div>
-          <CardPodcastDetail trackName={trackName} artistName={artistName} artworkUrl600={artworkUrl600} trackId={trackId}/>
-        </div>
-        <div>
-          <h2>Episodes: {resultCount}</h2>
-          <PodcastListTable />
-        </div>
+          <div>
+            <CardPodcastDetail trackName={trackName} artistName={artistName} artworkUrl600={artworkUrl600} />
+          </div>
+          </div>        
+          <div>
+            <div className='podcastDetailTittle'>
+              <h2>Episodes: {resultCount}</h2>
+            </div>
+            <PodcastListTable results={results} />
+          </div>        
       </div>
     </>
   )

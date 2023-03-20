@@ -1,0 +1,29 @@
+.CardPodcastDetailContainer {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px grey;
+    width: 25vw;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.CardPodcastDetailImgContainer{
+    padding: 25px;
+}
+
+.CardPodcastDetailImg {
+    width: 200px;
+    border-radius: 8px;
+}
+
+.CardPodcastDetailDescription{
+    padding: 20px;
+}
+
+.line {
+    border-top: 1px solid rgb(219, 219, 219);
+    height: 1px;
+    width: 100%;
+    padding: 0;
+  }
