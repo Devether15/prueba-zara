@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import useFetchDetail from '../../hooks/use-fetch-detail'
 import { useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header'
@@ -8,15 +8,23 @@ import './PodcastDetail.css';
 
 const PodcastDetail = () => {
   const { id } = useParams();
-  const {data, isLoading } = useFetchDetail(id)
-  const resultCount = data?.data?.resultCount;
-  const results= data?.data?.results 
-  const trackName =  data?.data?.results[0]?.trackName;
-  const artistName =  data?.data?.results[0]?.artistName;
-  const artworkUrl600 =  data?.data?.results[0]?.artworkUrl600;
-  const trackId =  data?.data?.results[0]?.trackId;
-  console.log(results)
+  const {data, isLoading, isFetching } = useFetchDetail(id)
+  const [rawData, setRawdata] = useState({});
+  
+  useEffect(() => {
+    if(!isFetching && !isLoading){
+      setRawdata(data)
+   }
+  }, [data,isFetching, isLoading])
+  
+  
+  const resultCount = rawData?.data?.resultCount;
+  const trackName =  rawData?.data?.results[0]?.trackName;
+  const artistName =  rawData?.data?.results[0]?.artistName;
+  const artworkUrl600 =  rawData?.data?.results[0]?.artworkUrl600;
+  const trackId =  rawData?.data?.results[0]?.trackId;
 
+ 
   return (
     <>
       <Header isLoading={isLoading}/>
@@ -26,7 +34,7 @@ const PodcastDetail = () => {
         </div>
         <div>
           <h2>Episodes: {resultCount}</h2>
-          <PodcastListTable data={results}/>
+          <PodcastListTable />
         </div>
       </div>
     </>

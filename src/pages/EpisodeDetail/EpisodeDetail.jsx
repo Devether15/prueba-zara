@@ -1,8 +1,12 @@
 import React from 'react'
+import Header from '../../components/Header/Header'
 
 const EpisodeDetail = () => {
   return (
-    <div>EpisodeDetail</div>
+    <>
+      <Header />    
+      <div>EpisodeDetail</div>
+    </>
   )
 }
 

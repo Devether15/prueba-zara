@@ -9,11 +9,13 @@ const GeneralView = () => {
   const { initialFeedURL } = URLS;
   const { data, isLoading } = usefetch(initialFeedURL)
   const feed = data?.data?.feed
+  console.log(feed)
   const [searchTerm, setSearchterm] = useState("");
 
   return (
     <>
         <Header isLoading={isLoading}/>
+        <div></div>
         <SearchBar setSearchterm={setSearchterm} />
         <PodcastGrid feed={feed} searchTerm={searchTerm}/>
     </>

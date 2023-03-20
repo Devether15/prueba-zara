@@ -6,13 +6,14 @@ function useFetchDetail (podcastId) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { podcastDetailURLBase, podcastDetailURLParams } = URLS;
   const endpoint = `${podcastDetailURLBase}${podcastId}${podcastDetailURLParams}`;
-  const { data, isLoading } = useQuery(
+  const { data, isLoading, isFetching } = useQuery(
     ['podcast detail'],
     () => axios.get(endpoint)
   )
   
   return {
     isLoading,
+    isFetching,
     data,
   }
 }
