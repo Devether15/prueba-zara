@@ -8,9 +8,8 @@ import './PodcastDetail.css';
 
 const PodcastDetail = () => {
   const { id } = useParams();
-  const {data, isLoading, isFetching } = useFetchDetail(id)
+  const {data, isLoading, isFetching, localStorageData } = useFetchDetail(id)
   const [rawData, setRawdata] = useState({});
-  
   useEffect(() => {
     if(!isFetching && !isLoading){
       setRawdata(data)

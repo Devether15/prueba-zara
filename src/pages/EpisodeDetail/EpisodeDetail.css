@@ -1,0 +1,9 @@
+.episode-container{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px grey;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+}

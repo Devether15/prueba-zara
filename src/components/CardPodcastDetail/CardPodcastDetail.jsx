@@ -1,7 +1,7 @@
 import React from 'react';
 import './CardPodcastDetail.css'
 
-const CardPodcastDetail = ({ trackName, artistName, artworkUrl600, trackId}) => {
+const CardPodcastDetail = ({ trackName, artistName, artworkUrl600}) => {
    
   return (
     <div className='CardPodcastDetailContainer'>
