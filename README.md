@@ -2,7 +2,7 @@
 
 ## Scripts
 
-Parado sobre el directorio dle projecto se puedne ejecutar los siguientes  comandos:
+Parado sobre el directorio del projecto se pueden ejecutar los siguientes  comandos:
 
 ### `npm dev`
 
