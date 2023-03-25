@@ -9,7 +9,7 @@ function useFetchDetail (podcastId) {
   const endpoint = `${podcastDetailURLBase}${podcastId}${podcastDetailURLParams}`;
   const { data, isLoading, isFetching } = useQuery(
     ['podcast detail'],
-    () => axios.get(endpoint)
+    () => axios.get(`https://api.allorigins.win/raw?url=${endpoint}`)
   )  
 
   useEffect(() => {

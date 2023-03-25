@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
 div{
   box-sizing: border-box;
 }
@@ -5,15 +7,16 @@ div{
 .cards-container{
   display: flex;
   flex-wrap: wrap;
-  padding: 55px;
-  row-gap: 25px;
+  padding: 30px;
   column-gap: 24px;
+  padding-top: 80px
 }
 
 .card-wrapper {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 5px grey;
+   box-shadow: 0px 2px 2px rgb(209, 208, 208), 
+        -2px 2px 2px rgb(209, 208, 208), 2px 2px 2px rgb(209, 208, 208);
   height: 180px;
   width: 260px;
   position: relative;
@@ -33,4 +36,21 @@ div{
 .card-info{
   height: 60%;
   padding: 12px;
+}
+
+.card-tittle {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.card-author{
+  font-family: 'Roboto', sans-serif;
+  color: rgb(134, 134, 134);
+  font-style: normal;
+}
+
+a:link, a:visited, a:active {
+  text-decoration:none;
 }
