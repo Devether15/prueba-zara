@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 90px;
+    margin-top: 20px;
 }
 
 .feedCount{
