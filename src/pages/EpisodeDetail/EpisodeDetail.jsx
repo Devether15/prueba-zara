@@ -26,7 +26,7 @@ const EpisodeDetail = () => {
   const myObject = tableData.find((item) => {
     return item.trackId == trackID;
   });
-  console.log(myObject)
+  
   const trackName = myObject?.trackName;
   const collectionName = myObject?.trackName;
   const artworkUrl600 = myObject?.artworkUrl600;

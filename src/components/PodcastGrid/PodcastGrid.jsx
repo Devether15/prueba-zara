@@ -2,18 +2,11 @@ import React from 'react'
 import Card from '../Card/Card';
 import './PodcastGrid.css'
 
-const  PodcastGrid = ({feed, searchTerm}) => {
+const  PodcastGrid = ({feed}) => {
+  console.log(feed)
   return(
       <div className="podcastContainer">
-          {feed && feed.entry.filter((val) => {
-            if(searchTerm === ""){
-              return val;
-            }else if (val['im:name'].label.toLowerCase().includes(searchTerm.toLowerCase())) {
-              return val;
-            }else if (val['im:artist'].label.toLowerCase().includes(searchTerm.toLowerCase())) {
-              return val;
-            }
-          }).map(item => {
+          {feed && feed.map(item => {
               const name = item['im:name'].label;
               const image = item['im:image'][2].label;
               const artist = item['im:artist'].label;
